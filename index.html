@@ -13,7 +13,7 @@
     }
 
     :root {
-      --primary: #1e3a8a;      /* deep blue */
+      --primary: #1e3a8a;
       --primary-light: #3b82f6;
       --dark: #0f172a;
       --light: #f8fafc;
@@ -28,9 +28,7 @@
       --max-width: 1200px;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -39,7 +37,6 @@
       background: var(--white);
     }
 
-    /* ---------- UTILITY ---------- */
     .container {
       max-width: var(--max-width);
       margin: 0 auto;
@@ -124,9 +121,7 @@
       letter-spacing: -0.03em;
     }
 
-    .logo span {
-      color: var(--primary);
-    }
+    .logo span { color: var(--primary); }
 
     nav ul {
       display: flex;
@@ -143,9 +138,7 @@
     }
 
     nav a:hover,
-    nav a.active {
-      color: var(--primary);
-    }
+    nav a.active { color: var(--primary); }
 
     .menu-toggle {
       display: none;
@@ -165,9 +158,7 @@
       padding: 80px 0;
     }
 
-    .hero-content {
-      max-width: 720px;
-    }
+    .hero-content { max-width: 720px; }
 
     .hero h1 {
       font-size: 3.2rem;
@@ -177,9 +168,7 @@
       margin-bottom: 20px;
     }
 
-    .hero h1 span {
-      color: var(--primary);
-    }
+    .hero h1 span { color: var(--primary); }
 
     .hero p {
       font-size: 1.2rem;
@@ -239,7 +228,7 @@
       font-size: 0.95rem;
     }
 
-    /* ---------- PORTFOLIO ---------- */
+    /* ---------- PORTFOLIO (UPDATED WITH IMAGES) ---------- */
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -261,10 +250,22 @@
       box-shadow: var(--shadow-lg);
     }
 
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.05);
+    }
+
     .portfolio-item .overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(15,23,42,0.8) 0%, transparent 60%);
+      background: linear-gradient(to top, rgba(15,23,42,0.85) 0%, transparent 60%);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -286,17 +287,6 @@
     .portfolio-item .overlay p {
       font-size: 0.85rem;
       opacity: 0.8;
-    }
-
-    .portfolio-placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      color: var(--gray);
-      background: linear-gradient(135deg, #e2e8f0, #f1f5f9);
     }
 
     /* ---------- CONTACT ---------- */
@@ -398,13 +388,8 @@
 
     /* ---------- RESPONSIVE ---------- */
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
+      .hero h1 { font-size: 2.2rem; }
+      .hero p { font-size: 1rem; }
 
       nav ul {
         display: none;
@@ -420,41 +405,22 @@
         box-shadow: var(--shadow-md);
       }
 
-      nav ul.open {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
+      nav ul.open { display: flex; }
+      .menu-toggle { display: block; }
 
       .contact-wrapper {
         grid-template-columns: 1fr;
         gap: 40px;
       }
 
-      .section {
-        padding: 60px 0;
-      }
-
-      .section-title {
-        font-size: 1.6rem;
-      }
+      .section { padding: 60px 0; }
+      .section-title { font-size: 1.6rem; }
     }
 
     @media (max-width: 480px) {
-      .hero h1 {
-        font-size: 1.8rem;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-        text-align: center;
-      }
+      .hero h1 { font-size: 1.8rem; }
+      .hero-buttons { flex-direction: column; }
+      .btn { width: 100%; text-align: center; }
     }
   </style>
 </head>
@@ -516,35 +482,35 @@
       </div>
     </section>
 
-    <!-- PORTFOLIO -->
+    <!-- PORTFOLIO (NOW WITH IMAGES) -->
     <section id="portfolio" class="section" style="background: var(--light);">
       <div class="container">
         <h2 class="section-title fade-in">Selected work</h2>
         <p class="section-subtitle fade-in">A few examples of our recent projects.</p>
         <div class="portfolio-grid">
           <div class="portfolio-item fade-in">
-            <div class="portfolio-placeholder">01</div>
+            <img src="https://picsum.photos/seed/alpha/800/600" alt="Project Alpha">
             <div class="overlay">
               <h4>Project Alpha</h4>
               <p>Branding & Web Design</p>
             </div>
           </div>
           <div class="portfolio-item fade-in">
-            <div class="portfolio-placeholder">02</div>
+            <img src="https://picsum.photos/seed/beta/800/600" alt="Project Beta">
             <div class="overlay">
               <h4>Project Beta</h4>
               <p>E‑commerce Platform</p>
             </div>
           </div>
           <div class="portfolio-item fade-in">
-            <div class="portfolio-placeholder">03</div>
+            <img src="https://picsum.photos/seed/gamma/800/600" alt="Project Gamma">
             <div class="overlay">
               <h4>Project Gamma</h4>
               <p>Corporate Website</p>
             </div>
           </div>
           <div class="portfolio-item fade-in">
-            <div class="portfolio-placeholder">04</div>
+            <img src="https://picsum.photos/seed/delta/800/600" alt="Project Delta">
             <div class="overlay">
               <h4>Project Delta</h4>
               <p>Mobile App UI</p>
@@ -604,7 +570,6 @@
   </footer>
 
   <script>
-    // ---------- MOBILE MENU ----------
     const menuToggle = document.getElementById('menuToggle');
     const navList = document.getElementById('navList');
 
@@ -612,14 +577,12 @@
       navList.classList.toggle('open');
     });
 
-    // Close menu when a link is clicked
     document.querySelectorAll('nav a').forEach(link => {
       link.addEventListener('click', () => {
         navList.classList.remove('open');
       });
     });
 
-    // ---------- ACTIVE NAV LINK ON SCROLL ----------
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('nav a');
 
@@ -640,7 +603,6 @@
       });
     });
 
-    // ---------- FADE-IN ON SCROLL ----------
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -648,16 +610,12 @@
           observer.unobserve(entry.target);
         }
       });
-    }, {
-      threshold: 0.15,
-      rootMargin: '0px 0px -40px 0px'
-    });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll('.fade-in').forEach(el => {
       observer.observe(el);
     });
 
-    // ---------- CONTACT FORM (demo) ----------
     const contactForm = document.getElementById('contactForm');
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
